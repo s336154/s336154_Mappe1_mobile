@@ -27,12 +27,12 @@ import android.view.inputmethod.InputMethodManager;
 public class SpillAktivitet extends AppCompatActivity {
 
 
-
+    public int randomIndex, randomIndex2;
     private String[] mListValues;
     private String[] mListRegn;
     private TextView resultTextView;
     EditText tekst_res;
-    Button buttonNy, buttonOK;
+    Button buttonNy, buttonOK, buttonHjelp, buttonSjekk, buttonFjern;
     Button button9, button8, button7, button6, button5;
     Button button4, button3, button2, button1, button0;
 
@@ -42,25 +42,47 @@ public class SpillAktivitet extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.spill_aktivitet);
 
-
-
         mListValues = getResources().getStringArray(R.array.listValues);
         resultTextView = findViewById(R.id.tekst_regnstykke);
-        int randomIndex = (int) (Math.random() * mListValues.length);
+        randomIndex = (int) (Math.random() * mListValues.length);
         resultTextView.setText(mListValues[randomIndex]);
-
-
 
 
         tekst_res = (EditText) findViewById(R.id.res_textView);
         mListRegn = getResources().getStringArray(R.array.listRegn);
-        int randomIndex2 = (int) (Math.random() * mListValues.length);
+        randomIndex2 = (int) (Math.random() * mListValues.length);
         if (randomIndex2 != randomIndex) {
-        tekst_res.setText(mListRegn[randomIndex2]); }
+            tekst_res.setText(mListRegn[randomIndex2]); }
         else {
             randomIndex2 = (int) (Math.random() * mListValues.length);
             tekst_res.setText(mListRegn[randomIndex2]);
         }
+
+
+        buttonHjelp = (Button) findViewById(R.id.hjelpSpill);
+        buttonHjelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    resultTextView.setText(mListValues[randomIndex2]);
+
+            }
+        });
+
+        buttonNy = (Button) findViewById(R.id.buttonNy);
+        buttonNy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                randomIndex2 = (int) (Math.random() * mListValues.length);
+                if (randomIndex2 != randomIndex) {
+                    tekst_res.setText(mListRegn[randomIndex2]); }
+                else {
+                    randomIndex2 = (int) (Math.random() * mListValues.length);
+                    tekst_res.setText(mListRegn[randomIndex2]);
+                }
+
+            }
+        });
+
 
 
 
