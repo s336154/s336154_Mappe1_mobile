@@ -28,21 +28,104 @@ public class SpillAktivitet extends AppCompatActivity {
 
 
     public int randomIndex, randomIndex2;
+    public int x= 0;
     private String[] mListValues;
     private String[] mListRegn;
-
-    String[] indekser, check, innverdi;
+    int[] indekser;
+    String[] check, innverdi;
     private TextView resultTextView;
     EditText tekst_res;
     Button buttonNy, buttonOK, buttonHjelp, buttonSjekk, buttonFjern;
-    Button button9, button8, button7, button6, button5;
-    Button button4, button3, button2, button1, button0;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.spill_aktivitet);
+
+
+
+        Button butt0 = (Button) findViewById(R.id.button0);
+        Button butt1 = (Button) findViewById(R.id.button1);
+        Button butt2 = (Button) findViewById(R.id.button2);
+        Button butt3 = (Button) findViewById(R.id.button3);
+        Button butt4 = (Button) findViewById(R.id.button4);
+        Button butt5 = (Button) findViewById(R.id.button5);
+        Button butt6 = (Button) findViewById(R.id.button6);
+        Button butt7 = (Button) findViewById(R.id.button7);
+        Button butt8 = (Button) findViewById(R.id.button8);
+        Button butt9 = (Button) findViewById(R.id.button9);
+
+        butt0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tekst_res.setText(mListRegn[randomIndex2]+ "0");
+            }
+        });
+
+        butt1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tekst_res.setText(mListRegn[randomIndex2]+ "1");
+            }
+        });
+
+        butt2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tekst_res.setText(mListRegn[randomIndex2]+ "2");
+            }
+        });
+        butt3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tekst_res.setText(mListRegn[randomIndex2]+ "3");
+            }
+        });
+
+        butt4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tekst_res.setText(mListRegn[randomIndex2]+ "4");
+            }
+        });
+
+        butt5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tekst_res.setText(mListRegn[randomIndex2]+ "5");
+            }
+        });
+
+        butt6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tekst_res.setText(mListRegn[randomIndex2]+ "6");
+            }
+        });
+
+        butt7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tekst_res.setText(mListRegn[randomIndex2]+ "7");
+            }
+        });
+
+        butt8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tekst_res.setText(mListRegn[randomIndex2]+ "8");
+            }
+        });
+
+        butt9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tekst_res.setText(mListRegn[randomIndex2]+ "9");
+            }
+        });
+
 
         mListValues = getResources().getStringArray(R.array.listValues);
         resultTextView = findViewById(R.id.tekst_regnstykke);
@@ -65,7 +148,7 @@ public class SpillAktivitet extends AppCompatActivity {
         buttonHjelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    resultTextView.setText(mListValues[randomIndex2]);
+                resultTextView.setText(mListValues[randomIndex2]);
 
             }
         });
@@ -105,7 +188,7 @@ public class SpillAktivitet extends AppCompatActivity {
                     randomIndex2 = (int) (Math.random() * mListValues.length);
                     tekst_res.setText(mListRegn[randomIndex2]);
                 }
-                indekser[x++]= tekst_res.getText().toString();
+
 
             }
         });
@@ -123,8 +206,3 @@ public class SpillAktivitet extends AppCompatActivity {
     }
 
 }
-
-
-
-
-
