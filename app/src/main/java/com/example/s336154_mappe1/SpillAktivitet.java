@@ -28,7 +28,7 @@ public class SpillAktivitet extends AppCompatActivity {
 
 
     public int randomIndex, randomIndex2;
-    public int x= 0;
+    public int x=0; int antallRiktig=0; int antallFeil= 0;
 
     private String[] mListValues;
     private String[] mListRegn;
@@ -190,9 +190,13 @@ public class SpillAktivitet extends AppCompatActivity {
 
                 if  (Str_check.equals(Str_innverdi)){
                     tekst_res.setText("Riktig!");
+                    antallRiktig++;
+                    Log.d("Indekser Riktig", String.valueOf(antallRiktig));
                 }
                 else {
                     tekst_res.setText("Feil!");
+                    antallFeil++;
+                    Log.d("Indekser feil", String.valueOf(antallFeil));
                 }
             }
         });
@@ -202,14 +206,38 @@ public class SpillAktivitet extends AppCompatActivity {
         buttonOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                /*
+                innverdi = tekst_res.getText().toString().split("=");
+                String Str_innverdi = innverdi[1].trim();
+
+                while(Str_innverdi !=" ") {
+                    check = mListValues[randomIndex2].split("=");
+                    String Str_check = check[1].trim();
+                    Log.d("Indekser", Str_check);
+                    Log.d("Indekser", Str_innverdi);
+
+                    if (Str_check.equals(Str_innverdi)) {
+                        antallRiktig++;
+                        Log.d("Indekser feil", String.valueOf(antallRiktig));
+                    } else {
+                        antallFeil++;
+                        Log.d("Indekser riktig", String.valueOf(antallFeil));
+                    }
+                }
+                antallFeil++;
+                Log.d("Indekser riktig", String.valueOf(antallFeil));
+
+                 */
+
                 randomIndex2 = (int) (Math.random() * mListValues.length);
                 while (randomIndex == randomIndex2 || containsValue(indekser,randomIndex2)) {
                     randomIndex2 = (int) (Math.random() * mListValues.length);
                 }
-                    tekst_res.setText(mListRegn[randomIndex2]);
-                    indekser[x++]= randomIndex2;
+                tekst_res.setText(mListRegn[randomIndex2]);
+                indekser[x++]= randomIndex2;
                 Log.d("Indekser x", String.valueOf(x));
-                }
+            }
         });
 
         Button avsluttSpillet = findViewById(R.id.avsluttSpill);
@@ -222,6 +250,8 @@ public class SpillAktivitet extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+
     }
 
 }
