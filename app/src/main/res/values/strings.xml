@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">s336154_Mappe1</string>
+    <string name="tittel"> Spill </string>
+    <string name="ok"> Avslutt </string>
+    <string name="ikkeok"> Avbryt </string>
+    <string name="resultTextView"> Trykk på knappene </string>
+    <string name="avslutt_spill"> Tilbake </string>
+    <string name="hjelp_spill"> Hjelp </string>
+    <string name="language"> Språk </string>
+    <string name="nor_lang"> Norsk </string>
+    <string name="ger_lang"> Tysk </string>
+    <string name="ny_spill"> Ny </string>
+    <string name="button_fjern"> Fjern </string>
+    <string name="prefer_main"> Preferenser</string>
+    <string name="start_main"> Start </string>
+    <string name="om_main"> Om Spill </string>
+    <string name="avslutt_main"> Avslutt </string>
+    <string name="button_ny"> Ny </string>
+    <string name="button_ok"> OK </string>
+    <string name="button_res"> Resultat </string>
+    <string name="button_check"> Sjekk </string>
+    <string name="spill_regnstykke"> 3 + 3 = 6</string>
+    <string name="prefer_spill5"> 5 Regnestykker </string>
+    <string name="prefer_spill10"> 10 Regnestykker </string>
+    <string name="prefer_spill15"> 15 Regnestykker </string>
+    <string name="prefer_antall"> Antall Regnestykker</string>
+</resources>
