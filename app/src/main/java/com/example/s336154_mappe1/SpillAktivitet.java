@@ -1,6 +1,5 @@
 package com.example.s336154_mappe1;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,11 +16,13 @@ import androidx.fragment.app.DialogFragment;
 
 
 public class SpillAktivitet  extends AppCompatActivity implements
-        MinDialog.MittInterface{
+        MinDialog.MittInterface {
 
 
     public int randomIndex, randomIndex2;
-    public int x=0; int antallRiktig=0; int antallFeil= 0;
+    public int x = 0;
+    int antallRiktig = 0;
+    int antallFeil = 0;
 
     private String[] mListValues;
     private String[] mListRegn;
@@ -49,15 +50,16 @@ public class SpillAktivitet  extends AppCompatActivity implements
     public void onNoClick() {
         return;
     }
+
     public void visDialog(View v) {
         DialogFragment dialog = new MinDialog();
-        dialog.show(getSupportFragmentManager(),"Tittel");}
+        dialog.show(getSupportFragmentManager(), "Tittel");
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.spill_aktivitet);
-
 
 
         Button butt0 = (Button) findViewById(R.id.button0);
@@ -74,69 +76,69 @@ public class SpillAktivitet  extends AppCompatActivity implements
         butt0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tekst_res.setText(mListRegn[randomIndex2]+ "0");
+                tekst_res.setText(mListRegn[randomIndex2] + "0");
             }
         });
 
         butt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tekst_res.setText(mListRegn[randomIndex2]+ "1");
+                tekst_res.setText(mListRegn[randomIndex2] + "1");
             }
         });
 
         butt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tekst_res.setText(mListRegn[randomIndex2]+ "2");
+                tekst_res.setText(mListRegn[randomIndex2] + "2");
             }
         });
         butt3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tekst_res.setText(mListRegn[randomIndex2]+ "3");
+                tekst_res.setText(mListRegn[randomIndex2] + "3");
             }
         });
 
         butt4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tekst_res.setText(mListRegn[randomIndex2]+ "4");
+                tekst_res.setText(mListRegn[randomIndex2] + "4");
             }
         });
 
         butt5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tekst_res.setText(mListRegn[randomIndex2]+ "5");
+                tekst_res.setText(mListRegn[randomIndex2] + "5");
             }
         });
 
         butt6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tekst_res.setText(mListRegn[randomIndex2]+ "6");
+                tekst_res.setText(mListRegn[randomIndex2] + "6");
             }
         });
 
         butt7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tekst_res.setText(mListRegn[randomIndex2]+ "7");
+                tekst_res.setText(mListRegn[randomIndex2] + "7");
             }
         });
 
         butt8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tekst_res.setText(mListRegn[randomIndex2]+ "8");
+                tekst_res.setText(mListRegn[randomIndex2] + "8");
             }
         });
 
         butt9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tekst_res.setText(mListRegn[randomIndex2]+ "9");
+                tekst_res.setText(mListRegn[randomIndex2] + "9");
             }
         });
 
@@ -153,22 +155,17 @@ public class SpillAktivitet  extends AppCompatActivity implements
         randomIndex2 = (int) (Math.random() * mListValues.length);
 
 
-
-
-
         if (randomIndex2 != randomIndex) {
-            tekst_res.setText(mListRegn[randomIndex2]); }
-        else {
+            tekst_res.setText(mListRegn[randomIndex2]);
+        } else {
             randomIndex2 = (int) (Math.random() * mListValues.length);
             tekst_res.setText(mListRegn[randomIndex2]);
         }
 
 
-        indekser[x++]= randomIndex2;
+        indekser[x++] = randomIndex2;
         Log.d("Indekser array", String.valueOf(indekser.length));
         Log.d("Indekser x", String.valueOf(x));
-
-
 
 
         buttonHjelp = (Button) findViewById(R.id.hjelpSpill);
@@ -193,12 +190,11 @@ public class SpillAktivitet  extends AppCompatActivity implements
                 Log.d("Check", Str_check);
                 Log.d("Innverdi", Str_innverdi);
 
-                if  (Str_check.equals(Str_innverdi)){
+                if (Str_check.equals(Str_innverdi)) {
                     tekst_res.setText("Riktig!");
                     antallRiktig++;
                     Log.d("Indekser Riktig", String.valueOf(antallRiktig));
-                }
-                else {
+                } else {
                     tekst_res.setText("Feil!");
                     antallFeil++;
                     Log.d("Indekser feil", String.valueOf(antallFeil));
@@ -213,29 +209,35 @@ public class SpillAktivitet  extends AppCompatActivity implements
             public void onClick(View view) {
 
                 randomIndex2 = (int) (Math.random() * mListValues.length);
-                while (randomIndex == randomIndex2 || containsValue(indekser,randomIndex2)) {
+                while (randomIndex == randomIndex2 || containsValue(indekser, randomIndex2)) {
                     randomIndex2 = (int) (Math.random() * mListValues.length);
                 }
                 tekst_res.setText(mListRegn[randomIndex2]);
-                indekser[x++]= randomIndex2;
+                indekser[x++] = randomIndex2;
                 Log.d("Indekser x", String.valueOf(x));
             }
         });
 
-        Button avsluttSpillet = findViewById(R.id.avsluttSpill);
-        Intent i = new Intent(this, MainActivity.class);
-
-        avsluttSpillet.setOnClickListener(new View.OnClickListener() {
+        Button avsluttSpill = findViewById(R.id.avsluttSpill);
+        avsluttSpill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(antallFeil != 0 || antallRiktig != 0){
+                if (antallFeil != 0 || antallRiktig != 0) {
                     visDialog(view);
                 }
 
             }
         });
 
+        Button res_spill = findViewById(R.id.buttonRes);
+        res_spill.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                resultTextView.setText("Riktig: "+ String.valueOf(antallRiktig));
+                tekst_res.setText("Feil: "+String.valueOf(antallFeil));
+            }
+
+        });
 
     }
-
 }
