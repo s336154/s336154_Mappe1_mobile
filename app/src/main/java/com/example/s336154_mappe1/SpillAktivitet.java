@@ -182,15 +182,11 @@ public class SpillAktivitet extends AppCompatActivity {
             public void onClick(View view) {
                 int x= 0;
                 randomIndex2 = (int) (Math.random() * mListValues.length);
-                if (randomIndex2 != randomIndex) {
-                    tekst_res.setText(mListRegn[randomIndex2]); }
-                else {
+                while (randomIndex == randomIndex2) {
                     randomIndex2 = (int) (Math.random() * mListValues.length);
+                }
                     tekst_res.setText(mListRegn[randomIndex2]);
                 }
-
-
-            }
         });
 
         Button avsluttSpillet = findViewById(R.id.avsluttSpill);
