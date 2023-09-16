@@ -30,6 +30,8 @@ public class SpillAktivitet extends AppCompatActivity {
     public int randomIndex, randomIndex2;
     private String[] mListValues;
     private String[] mListRegn;
+
+    String[] indekser, check, innverdi;
     private TextView resultTextView;
     EditText tekst_res;
     Button buttonNy, buttonOK, buttonHjelp, buttonSjekk, buttonFjern;
@@ -68,10 +70,34 @@ public class SpillAktivitet extends AppCompatActivity {
             }
         });
 
-        buttonNy = (Button) findViewById(R.id.buttonNy);
-        buttonNy.setOnClickListener(new View.OnClickListener() {
+        buttonSjekk = (Button) findViewById(R.id.buttonCheck);
+        buttonSjekk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                innverdi = tekst_res.getText().toString().split("=");
+                String Str_innverdi = innverdi[1].trim();
+                check = mListValues[randomIndex2].split("=");
+                String Str_check = check[1].trim();
+                resultTextView.setText(mListValues[randomIndex2]);
+                Log.d("Check", Str_check);
+                Log.d("Innverdi", Str_innverdi);
+
+                if  (Str_check.equals(Str_innverdi)){
+                    tekst_res.setText("Riktig!");
+                }
+                else {
+                    tekst_res.setText("Feil!");
+                }
+            }
+        });
+
+
+        buttonOK = (Button) findViewById(R.id.buttonOK);
+        buttonOK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int x= 0;
                 randomIndex2 = (int) (Math.random() * mListValues.length);
                 if (randomIndex2 != randomIndex) {
                     tekst_res.setText(mListRegn[randomIndex2]); }
@@ -79,12 +105,10 @@ public class SpillAktivitet extends AppCompatActivity {
                     randomIndex2 = (int) (Math.random() * mListValues.length);
                     tekst_res.setText(mListRegn[randomIndex2]);
                 }
+                indekser[x++]= tekst_res.getText().toString();
 
             }
         });
-
-
-
 
         Button avsluttSpillet = findViewById(R.id.avsluttSpill);
         Intent i = new Intent(this, MainActivity.class);
