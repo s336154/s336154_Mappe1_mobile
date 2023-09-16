@@ -1,30 +1,23 @@
 package com.example.s336154_mappe1;
 
-import static androidx.core.content.ContextCompat.startActivity;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.app.ListActivity;
-import android.widget.ArrayAdapter;
-import android.content.res.Resources;
-import android.content.res.TypedArray;
 import androidx.appcompat.app.AppCompatActivity;
-import android.content.Context;
-import android.view.View;
-import android.view.inputmethod.InputMethodManager;
+import androidx.fragment.app.DialogFragment;
 
 
 
 
-public class SpillAktivitet extends AppCompatActivity {
+
+
+public class SpillAktivitet  extends AppCompatActivity implements
+        MinDialog.MittInterface{
 
 
     public int randomIndex, randomIndex2;
@@ -47,6 +40,18 @@ public class SpillAktivitet extends AppCompatActivity {
         }
         return false;
     }
+
+
+    public void onYesClick() {
+        finish();
+    }
+
+    public void onNoClick() {
+        return;
+    }
+    public void visDialog(View v) {
+        DialogFragment dialog = new MinDialog();
+        dialog.show(getSupportFragmentManager(),"Tittel");}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -207,29 +212,6 @@ public class SpillAktivitet extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                /*
-                innverdi = tekst_res.getText().toString().split("=");
-                String Str_innverdi = innverdi[1].trim();
-
-                while(Str_innverdi !=" ") {
-                    check = mListValues[randomIndex2].split("=");
-                    String Str_check = check[1].trim();
-                    Log.d("Indekser", Str_check);
-                    Log.d("Indekser", Str_innverdi);
-
-                    if (Str_check.equals(Str_innverdi)) {
-                        antallRiktig++;
-                        Log.d("Indekser feil", String.valueOf(antallRiktig));
-                    } else {
-                        antallFeil++;
-                        Log.d("Indekser riktig", String.valueOf(antallFeil));
-                    }
-                }
-                antallFeil++;
-                Log.d("Indekser riktig", String.valueOf(antallFeil));
-
-                 */
-
                 randomIndex2 = (int) (Math.random() * mListValues.length);
                 while (randomIndex == randomIndex2 || containsValue(indekser,randomIndex2)) {
                     randomIndex2 = (int) (Math.random() * mListValues.length);
@@ -246,8 +228,10 @@ public class SpillAktivitet extends AppCompatActivity {
         avsluttSpillet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
-                startActivity(i);
+                if(antallFeil != 0 || antallRiktig != 0){
+                    visDialog(view);
+                }
+
             }
         });
 
