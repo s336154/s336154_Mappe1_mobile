@@ -39,9 +39,9 @@
             android:background="#F0F8FF"
             android:gravity="center"
             android:textColor="#191970"
-            android:textSize="40sp"
-            android:textStyle="italic"
-            android:inputType="phone"/>
+            android:textSize="45sp"
+            android:textStyle="bold"
+            android:inputType="number"/>
 
     </GridLayout>
 

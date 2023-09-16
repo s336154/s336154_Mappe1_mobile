@@ -3,10 +3,12 @@ package com.example.s336154_mappe1;
 import static androidx.core.content.ContextCompat.startActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,13 +17,19 @@ import android.widget.ArrayAdapter;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import androidx.appcompat.app.AppCompatActivity;
+import android.content.Context;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 
-import androidx.appcompat.app.AppCompatActivity;
+
+
 
 public class SpillAktivitet extends AppCompatActivity {
 
 
+
     private String[] mListValues;
+    private String[] mListRegn;
     private TextView resultTextView;
     EditText tekst_res;
     Button buttonNy, buttonOK;
@@ -29,42 +37,32 @@ public class SpillAktivitet extends AppCompatActivity {
     Button button4, button3, button2, button1, button0;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.spill_aktivitet);
 
-        /*
-        Resources res = getResources();
-        TypedArray regnstykker = res.obtainTypedArray(R.array.listValues);
 
-        for(int i=0;i<regnstykker.length();i++){
-            String regn = (String) regnstykker.getText(i); // 0 is the default color if not found
-            resultTextView =  findViewById(R.id.tekst_regnstykke);
-            resultTextView.setText(regn);
-           regnstykker.recycle();
-        }
 
-         */
-
-        // Get the string array from resources
         mListValues = getResources().getStringArray(R.array.listValues);
-
-        // Get a reference to the TextView
         resultTextView = findViewById(R.id.tekst_regnstykke);
-
-        // Generate a random index
         int randomIndex = (int) (Math.random() * mListValues.length);
-
-        // Set the random item as the text of the TextView
         resultTextView.setText(mListValues[randomIndex]);
 
 
-        tekst_res = (EditText) findViewById(R.id.res_textView);
 
-        resultTextView = findViewById(R.id.res_textView);
-        Log.d("I Spillet ", "oncreate Spillet");
+
+        tekst_res = (EditText) findViewById(R.id.res_textView);
+        mListRegn = getResources().getStringArray(R.array.listRegn);
+        int randomIndex2 = (int) (Math.random() * mListValues.length);
+        if (randomIndex2 != randomIndex) {
+        tekst_res.setText(mListRegn[randomIndex2]); }
+        else {
+            randomIndex2 = (int) (Math.random() * mListValues.length);
+            tekst_res.setText(mListRegn[randomIndex2]);
+        }
+
+
 
         Button avsluttSpillet = findViewById(R.id.avsluttSpill);
         Intent i = new Intent(this, MainActivity.class);
@@ -77,6 +75,7 @@ public class SpillAktivitet extends AppCompatActivity {
             }
         });
     }
+
 }
 
 
