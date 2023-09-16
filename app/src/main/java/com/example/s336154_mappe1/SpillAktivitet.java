@@ -28,7 +28,7 @@ public class SpillAktivitet extends AppCompatActivity {
 
 
     public int randomIndex, randomIndex2;
-    public int x= 0; int i;
+    public int x= 0;
 
     private String[] mListValues;
     private String[] mListRegn;
@@ -135,6 +135,8 @@ public class SpillAktivitet extends AppCompatActivity {
             }
         });
 
+
+        Log.d("Indekser x", String.valueOf(x));
         mListValues = getResources().getStringArray(R.array.listValues);
         resultTextView = findViewById(R.id.tekst_regnstykke);
         randomIndex = (int) (Math.random() * mListValues.length);
@@ -201,7 +203,7 @@ public class SpillAktivitet extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 randomIndex2 = (int) (Math.random() * mListValues.length);
-                while (randomIndex == randomIndex2) {
+                while (randomIndex == randomIndex2 || containsValue(indekser,randomIndex2)) {
                     randomIndex2 = (int) (Math.random() * mListValues.length);
                 }
                     tekst_res.setText(mListRegn[randomIndex2]);
