@@ -21,7 +21,7 @@ public class SpillAktivitet extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.spill_aktivitet);
-        resultTextView = findViewById(R.id.resultTextView);
+        resultTextView = findViewById(R.id.res_textView);
         Log.d("I Spillet ", "oncreate Spillet");
 
         Button avsluttSpillet = findViewById(R.id.avsluttSpill);

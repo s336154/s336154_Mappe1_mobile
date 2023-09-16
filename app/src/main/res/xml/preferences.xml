@@ -2,7 +2,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
-        android:title="@string/language">
+        android:title="@string/prefer_language">
 
         <CheckBoxPreference
             android:id="@+id/nor_lang"
