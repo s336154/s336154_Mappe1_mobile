@@ -35,7 +35,7 @@ public class SpillAktivitet extends AppCompatActivity {
     String[] check, innverdi;
     private TextView resultTextView;
     EditText tekst_res;
-    Button buttonNy, buttonOK, buttonHjelp, buttonSjekk, buttonFjern;
+    Button buttonOK, buttonHjelp, buttonSjekk;
 
 
 
