@@ -28,16 +28,25 @@ public class SpillAktivitet extends AppCompatActivity {
 
 
     public int randomIndex, randomIndex2;
-    public int x= 0;
+    public int x= 0; int i;
+
     private String[] mListValues;
     private String[] mListRegn;
-    int[] indekser;
+    int[] indekser = new int[16];
     String[] check, innverdi;
     private TextView resultTextView;
     EditText tekst_res;
     Button buttonOK, buttonHjelp, buttonSjekk;
 
 
+    public static boolean containsValue(int[] array, int targetValue) {
+        for (int value : array) {
+            if (value == targetValue) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,7 +135,6 @@ public class SpillAktivitet extends AppCompatActivity {
             }
         });
 
-
         mListValues = getResources().getStringArray(R.array.listValues);
         resultTextView = findViewById(R.id.tekst_regnstykke);
         randomIndex = (int) (Math.random() * mListValues.length);
@@ -136,12 +144,24 @@ public class SpillAktivitet extends AppCompatActivity {
         tekst_res = (EditText) findViewById(R.id.res_textView);
         mListRegn = getResources().getStringArray(R.array.listRegn);
         randomIndex2 = (int) (Math.random() * mListValues.length);
+
+
+
+
+
         if (randomIndex2 != randomIndex) {
             tekst_res.setText(mListRegn[randomIndex2]); }
         else {
             randomIndex2 = (int) (Math.random() * mListValues.length);
             tekst_res.setText(mListRegn[randomIndex2]);
         }
+
+
+        indekser[x++]= randomIndex2;
+        Log.d("Indekser array", String.valueOf(indekser.length));
+        Log.d("Indekser x", String.valueOf(x));
+
+
 
 
         buttonHjelp = (Button) findViewById(R.id.hjelpSpill);
@@ -180,12 +200,13 @@ public class SpillAktivitet extends AppCompatActivity {
         buttonOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int x= 0;
                 randomIndex2 = (int) (Math.random() * mListValues.length);
                 while (randomIndex == randomIndex2) {
                     randomIndex2 = (int) (Math.random() * mListValues.length);
                 }
                     tekst_res.setText(mListRegn[randomIndex2]);
+                    indekser[x++]= randomIndex2;
+                Log.d("Indekser x", String.valueOf(x));
                 }
         });
 
