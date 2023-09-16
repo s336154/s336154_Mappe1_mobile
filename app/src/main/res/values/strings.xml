@@ -19,7 +19,7 @@
     <string name="button_ok"> OK </string>
     <string name="button_res"> Resultat </string>
     <string name="button_check"> Sjekk </string>
-    <string name="tekst_regnstykke"> 3 + 3 = 6</string>
+    <string name="tekst_regnstykke"> 2 + 2 = 4</string>
     <string name="prefer_spill5"> 5 Regnestykker </string>
     <string name="prefer_spill10"> 10 Regnestykker </string>
     <string name="prefer_spill15"> 15 Regnestykker </string>

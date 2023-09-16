@@ -40,7 +40,8 @@
             android:gravity="center"
             android:textColor="#191970"
             android:textSize="40sp"
-            android:textStyle="italic" />
+            android:textStyle="italic"
+            android:inputType="phone"/>
 
     </GridLayout>
 
