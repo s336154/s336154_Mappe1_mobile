@@ -35,8 +35,7 @@ public class MinDialog extends DialogFragment {
                 }).setNegativeButton(R.string.ikkeok, new
                 DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
-                        callback.onNoClick();
-                    }
+                        callback.onNoClick(); }
                 }).create();
     }
 
@@ -45,7 +44,6 @@ public class MinDialog extends DialogFragment {
 
     public interface MittInterface {
         public void onYesClick();
-
         public void onNoClick();
     }
 
