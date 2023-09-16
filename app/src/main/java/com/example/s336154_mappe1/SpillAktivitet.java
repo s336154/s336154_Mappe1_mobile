@@ -14,9 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class SpillAktivitet extends AppCompatActivity {
 
     private TextView resultTextView;
-    private String currentInput = "";
-    private double firstValue = Double.NaN;
-    private String operator = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,64 +27,9 @@ public class SpillAktivitet extends AppCompatActivity {
 
         avsluttSpillet.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View view) {
-                finish(); startActivity(i);
+              startActivity(i);  finish();
             } }); }
 
-    public void onNumberClick(View view) {
-        Button button = (Button) view;
-        currentInput += button.getText().toString();
-        updateResultText();
-    }
-
-    public void onOperatorClick(View view) {
-        Button button = (Button) view;
-        operator = button.getText().toString();
-        if (!currentInput.isEmpty()) {
-            firstValue = Double.parseDouble(currentInput);
-            currentInput = "";
-        }
-    }
-
-    public void onClearClick(View view) {
-        currentInput = "";
-        firstValue = Double.NaN;
-        operator = "";
-        updateResultText();
-    }
-
-    public void onEqualClick(View view) {
-        if (!Double.isNaN(firstValue) && !currentInput.isEmpty()) {
-            double secondValue = Double.parseDouble(currentInput);
-            double result = calculateResult(firstValue, secondValue, operator);
-            currentInput = String.valueOf(result);
-            operator = "";
-            firstValue = Double.NaN;
-            updateResultText();
-        }
-    }
-
-    private double calculateResult(double num1, double num2, String operator) {
-        switch (operator) {
-            case "+":
-                return num1 + num2;
-            case "-":
-                return num1 - num2;
-            case "*":
-                return num1 * num2;
-            case "/":
-                if (num2 != 0) {
-                    return num1 / num2;
-                } else {
-                    return Double.NaN; // Handle division by zero
-                }
-            default:
-                return num2;
-        }
-    }
-
-    private void updateResultText() {
-        resultTextView.setText(currentInput);
-    }
 }
 
 

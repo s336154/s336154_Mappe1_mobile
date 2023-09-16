@@ -22,16 +22,11 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     protected void onSaveInstanceState(Bundle outstate){
-        super.onSaveInstanceState(outstate);
-
-    }
+        super.onSaveInstanceState(outstate); }
 
     @Override
-    protected void onRestoreInstanceState(@NonNull Bundle
-                                                  savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-
-    }
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState); }
 
     @Override
     public void onYesClick() {
@@ -41,11 +36,10 @@ public class MainActivity extends AppCompatActivity implements
     public void onNoClick() {
         return;
     }
-    public void visDialog(View v)
-    {
+    public void visDialog(View v) {
         DialogFragment dialog = new MinDialog();
-        dialog.show(getSupportFragmentManager(),"Tittel");
-    }
+        dialog.show(getSupportFragmentManager(),"Tittel");}
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,26 +59,14 @@ public class MainActivity extends AppCompatActivity implements
         dialogknapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                visDialog(view);
-                ;
-            }
-
-
+                visDialog(view);}
         });
+
         Button preferanseknapp = findViewById(R.id.preferanser);
         Intent intent = new Intent(this, SettingsActivity.class);
         preferanseknapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(intent);
-            }
-
-
+                startActivity(intent); }
         });
-
-
-
-    }
-
-
-    }
+    } }
