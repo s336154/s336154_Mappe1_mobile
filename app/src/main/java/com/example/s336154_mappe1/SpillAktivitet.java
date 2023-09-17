@@ -33,6 +33,7 @@ public class SpillAktivitet  extends AppCompatActivity implements
     Button buttonOK, buttonHjelp, buttonSjekk;
 
 
+
     public static boolean containsValue(int[] array, int targetValue) {
         for (int value : array) {
             if (value == targetValue) {
@@ -191,11 +192,11 @@ public class SpillAktivitet  extends AppCompatActivity implements
                 Log.d("Innverdi", Str_innverdi);
 
                 if (Str_check.equals(Str_innverdi)) {
-                    tekst_res.setText("Riktig!");
+                    tekst_res.setText("\u2713");
                     antallRiktig++;
                     Log.d("Indekser Riktig", String.valueOf(antallRiktig));
                 } else {
-                    tekst_res.setText("Feil!");
+                    tekst_res.setText("\u274C");
                     antallFeil++;
                     Log.d("Indekser feil", String.valueOf(antallFeil));
                 }
@@ -208,15 +209,41 @@ public class SpillAktivitet  extends AppCompatActivity implements
             @Override
             public void onClick(View view) {
 
-                randomIndex2 = (int) (Math.random() * mListValues.length);
-                while (randomIndex == randomIndex2 || containsValue(indekser, randomIndex2)) {
-                    randomIndex2 = (int) (Math.random() * mListValues.length);
+                innverdi = tekst_res.getText().toString().split("=");
+                while (innverdi.length == 2) {
+                    String Str_innverdi = innverdi[1].trim();
+                    Log.d("Innverdi", Str_innverdi);
+
+                    if (Str_innverdi != " ") {
+                        check = mListValues[randomIndex2].split("=");
+                        String Str_check = check[1].trim();
+                        Log.d("Check", Str_check);
+                        Log.d("Innverdi", Str_innverdi);
+
+                        if (Str_check.equals(Str_innverdi)) {
+                            antallRiktig++;
+                            Log.d("Indekser Riktig", String.valueOf(antallRiktig));
+                            innverdi = new String[1];
+                        } else {
+                            antallFeil++;
+                            Log.d("Indekser feil", String.valueOf(antallFeil));
+                            innverdi = new String[1];
+                        }
+                    }
                 }
-                tekst_res.setText(mListRegn[randomIndex2]);
-                indekser[x++] = randomIndex2;
-                Log.d("Indekser x", String.valueOf(x));
+
+                    randomIndex2 = (int) (Math.random() * mListValues.length);
+                    while (randomIndex == randomIndex2 || containsValue(indekser, randomIndex2)) {
+                        randomIndex2 = (int) (Math.random() * mListValues.length);
+                    }
+                    tekst_res.setText(mListRegn[randomIndex2]);
+                    indekser[x++] = randomIndex2;
+                    Log.d("Indekser x", String.valueOf(x));
+
             }
+
         });
+
 
         Button avsluttSpill = findViewById(R.id.avsluttSpill);
         avsluttSpill.setOnClickListener(new View.OnClickListener() {
@@ -233,8 +260,8 @@ public class SpillAktivitet  extends AppCompatActivity implements
         res_spill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                resultTextView.setText("Riktig: "+ String.valueOf(antallRiktig));
-                tekst_res.setText("Feil: "+String.valueOf(antallFeil));
+                resultTextView.setText("\u2713  " +String.valueOf(antallRiktig));
+                tekst_res.setText("\u274C " +String.valueOf(antallFeil));
             }
 
         });

@@ -55,6 +55,15 @@ public class MainActivity extends AppCompatActivity implements
             }
         });
 
+        Button omspill_knapp=findViewById(R.id.OmSpill);
+        Intent r=new Intent(this, OmspillAktivitet.class);
+        omspill_knapp.setOnClickListener(new View.OnClickListener() {
+
+            @Override public void onClick(View view) {
+                startActivity(r);
+            } });
+
+
         Button dialogknapp = findViewById(R.id.Avslutt);
         dialogknapp.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -24,4 +24,10 @@
     <string name="prefer_spill10"> 10 Regnestykker </string>
     <string name="prefer_spill15"> 15 Regnestykker </string>
     <string name="prefer_antall"> Antall Regnestykker</string>
+    <string name="omspill_tekst"> Om Spill </string>
+    <string name="omspill_knapp1"> Tilbake </string>
+    <string name="omspill_beskriv"> Spillet er egnet for å lære
+        små barn addisjon regning. Det skal være mulig å bruke
+        appen både på norsk og tysk språk. Vi håper at du kommer
+        til å elske spillet! \uD83D\uDE00\u2764\uFE0F </string>
 </resources>

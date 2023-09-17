@@ -28,6 +28,10 @@
             android:windowSoftInputMode="stateAlwaysHidden">
         </activity>
 
+        <activity
+            android:name=".OmspillAktivitet">
+        </activity>
+
     </application>
 
 </manifest>
