@@ -1,6 +1,5 @@
 package com.example.s336154_mappe1;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;

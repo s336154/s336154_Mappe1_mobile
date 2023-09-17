@@ -1,6 +1,5 @@
 package com.example.s336154_mappe1;
 
-
 import android.os.Bundle;
 import androidx.preference.PreferenceFragmentCompat;
 public class SettingsFragment extends PreferenceFragmentCompat {
