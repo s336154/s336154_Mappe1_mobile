@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">s336154_Mappe1</string>
-    <string name="tittel"> Spill </string>
-    <string name="ok"> Avslutt </string>
-    <string name="ikkeok"> Avbryt </string>
-    <string name="avslutt_spill"> Tilbake </string>
-    <string name="hjelp_spill"> Hjelp </string>
-    <string name="prefer_language"> Språk </string>
-    <string name="nor_lang"> Norsk </string>
-    <string name="ger_lang"> Tysk </string>
+    <string name="tittel"> Spiel </string>
+    <string name="ok"> Ausfahrt </string>
+    <string name="ikkeok"> Stornieren </string>
+    <string name="avslutt_spill"> Zurück </string>
+    <string name="hjelp_spill"> Helfen </string>
+    <string name="prefer_language"> Sprache </string>
+    <string name="nor_lang"> Norwegisch </string>
+    <string name="ger_lang"> Deutsch </string>
     <string name="ny_spill"> Ny </string>
     <string name="button_fjern"> Fjern </string>
     <string name="prefer_main"> Preferenser</string>

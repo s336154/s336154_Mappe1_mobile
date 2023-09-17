@@ -8,7 +8,7 @@
     android:padding="16dp"
     tools:context=".MainActivity"
     android:background="@drawable/img"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
 
     <GridLayout
