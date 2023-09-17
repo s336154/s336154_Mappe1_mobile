@@ -8,25 +8,24 @@
     <string name="prefer_language"> Sprache </string>
     <string name="nor_lang"> Norwegisch </string>
     <string name="ger_lang"> Deutsch </string>
-    <string name="ny_spill"> Ny </string>
-    <string name="button_fjern"> Fjern </string>
-    <string name="prefer_main"> Preferenser</string>
+    <string name="button_fjern"> Fernbedienung </string>
+    <string name="prefer_main"> Präferenzen </string>
     <string name="start_main"> Start </string>
-    <string name="om_main"> Om Spill </string>
-    <string name="avslutt_main"> Avslutt </string>
-    <string name="button_ny"> Ny </string>
+    <string name="om_main"> Über Spiele </string>
+    <string name="avslutt_main"> Ausfahrt </string>
     <string name="button_ok"> OK </string>
-    <string name="button_res"> Resultat </string>
-    <string name="button_check"> Sjekk </string>
+    <string name="button_res"> Ergebnis </string>
+    <string name="button_check"> Überprüfen </string>
     <string name="tekst_regnstykke"> 2 + 2 = 4</string>
-    <string name="prefer_spill5"> 5 Regnestykker </string>
-    <string name="prefer_spill10"> 10 Regnestykker </string>
-    <string name="prefer_spill15"> 15 Regnestykker </string>
-    <string name="prefer_antall"> Antall Regnestykker</string>
-    <string name="omspill_tekst"> Om Spill </string>
-    <string name="omspill_knapp1"> Tilbake </string>
-    <string name="omspill_beskriv"> Spillet er egnet for å lære
-        små barn addisjon regning. Det skal være mulig å bruke
-        appen både på norsk og tysk språk. Vi håper at du kommer
-        til å elske spillet! \uD83D\uDE00\u2764\uFE0F </string>
+    <string name="prefer_spill5"> 5 Berechnungen </string>
+    <string name="prefer_spill10"> 10 Berechnungen </string>
+    <string name="prefer_spill15"> 15 Berechnungen </string>
+    <string name="prefer_antall"> Anzahl der Berechnungen </string>
+    <string name="omspill_tekst"> Über Spiele </string>
+    <string name="omspill_knapp1"> Zurück </string>
+    <string name="omspill_beskriv"> Das Spiel eignet sich, um kleinen
+        Kindern einfache Additionsrechnungen beizubringen. Es ist
+        möglich, die App sowohl in norwegischer als auch in deutscher
+        Sprache zu nutzen. Wir hoffen, dass Sie das Spiel lieben werden!
+        \uD83D\uDE00\u2764\uFE0F </string>
 </resources>

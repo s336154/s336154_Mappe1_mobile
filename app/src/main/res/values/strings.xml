@@ -8,13 +8,11 @@
     <string name="prefer_language"> Språk </string>
     <string name="nor_lang"> Norsk </string>
     <string name="ger_lang"> Tysk </string>
-    <string name="ny_spill"> Ny </string>
     <string name="button_fjern"> Fjern </string>
-    <string name="prefer_main"> Preferenser</string>
+    <string name="prefer_main"> Preferanser</string>
     <string name="start_main"> Start </string>
     <string name="om_main"> Om Spill </string>
     <string name="avslutt_main"> Avslutt </string>
-    <string name="button_ny"> Ny </string>
     <string name="button_ok"> OK </string>
     <string name="button_res"> Resultat </string>
     <string name="button_check"> Sjekk </string>
@@ -25,8 +23,8 @@
     <string name="prefer_antall"> Antall Regnestykker</string>
     <string name="omspill_tekst"> Om Spill </string>
     <string name="omspill_knapp1"> Tilbake </string>
-    <string name="omspill_beskriv"> Spillet er egnet for å lære
-        små barn addisjon regning. Det skal være mulig å bruke
-        appen både på norsk og tysk språk. Vi håper at du kommer
-        til å elske spillet! \uD83D\uDE00\u2764\uFE0F </string>
+    <string name="omspill_beskriv"> Spillet er egnet til
+        å lære små barn enkle addisjonsberegninger. Det
+        er mulig å bruke appen både på norsk og tysk. Vi
+        håper du vil elske spillet! \uD83D\uDE00\u2764\uFE0F </string>
 </resources>
