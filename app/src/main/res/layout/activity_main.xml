@@ -71,5 +71,10 @@
 
         </GridLayout>
 
+        <EditText
+            android:id="@+id/tekst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,6 +21,7 @@
     <string name="prefer_spill10"> 10 Berechnungen </string>
     <string name="prefer_spill15"> 15 Berechnungen </string>
     <string name="prefer_antall"> Anzahl der Berechnungen </string>
+    <string name="prefer_tittle"> Einstellungen </string>
     <string name="omspill_tekst"> Über Spiele </string>
     <string name="omspill_knapp1"> Zurück </string>
     <string name="omspill_beskriv"> Das Spiel eignet sich, um kleinen

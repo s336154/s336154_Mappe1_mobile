@@ -8,22 +8,8 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
-public class OmspillAktivitet extends AppCompatActivity implements
-        MinDialog.MittInterface {
+public class OmspillAktivitet extends AppCompatActivity {
 
-
-    public void onYesClick() {
-        finish();
-    }
-
-    public void onNoClick() {
-        return;
-    }
-
-    public void visDialog(View v) {
-        DialogFragment dialog = new MinDialog();
-        dialog.show(getSupportFragmentManager(), "Tittel");
-    }
 
     @Override
 
@@ -34,7 +20,6 @@ public class OmspillAktivitet extends AppCompatActivity implements
         Button omspill_knapp1=findViewById(R.id.omspill_knapp1);
         omspill_knapp1.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View view) {
-
-                visDialog(view);
+                finish();
             } }); }
 }

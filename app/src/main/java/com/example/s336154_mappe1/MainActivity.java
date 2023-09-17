@@ -22,11 +22,17 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     protected void onSaveInstanceState(Bundle outstate){
-        super.onSaveInstanceState(outstate); }
-
+        super.onSaveInstanceState(outstate);
+        EditText textView = (EditText) findViewById(R.id.tekst);
+        outstate.putString("antall",textView.getText().toString());
+    }
     @Override
-    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState); }
+    protected void onRestoreInstanceState(@NonNull Bundle
+                                                  savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        EditText tw=(EditText) findViewById(R.id.tekst);
+        tw.setText(savedInstanceState.getString("antall"));
+    }
 
     @Override
     public void onYesClick() {

@@ -178,6 +178,7 @@ public class SpillAktivitet  extends AppCompatActivity implements
             }
         });
 
+
         buttonSjekk = (Button) findViewById(R.id.buttonCheck);
         buttonSjekk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -231,7 +232,6 @@ public class SpillAktivitet  extends AppCompatActivity implements
                         }
                     }
                 }
-
                     randomIndex2 = (int) (Math.random() * mListValues.length);
                     while (randomIndex == randomIndex2 || containsValue(indekser, randomIndex2)) {
                         randomIndex2 = (int) (Math.random() * mListValues.length);
@@ -239,9 +239,17 @@ public class SpillAktivitet  extends AppCompatActivity implements
                     tekst_res.setText(mListRegn[randomIndex2]);
                     indekser[x++] = randomIndex2;
                     Log.d("Indekser x", String.valueOf(x));
-
             }
+        });
 
+
+        Button res_spill = findViewById(R.id.buttonRes);
+        res_spill.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                resultTextView.setText("\u2713  " +String.valueOf(antallRiktig));
+                tekst_res.setText("\u274C " +String.valueOf(antallFeil));
+            }
         });
 
 
@@ -252,19 +260,11 @@ public class SpillAktivitet  extends AppCompatActivity implements
                 if (antallFeil != 0 || antallRiktig != 0) {
                     visDialog(view);
                 }
-
+                finish();
             }
         });
 
-        Button res_spill = findViewById(R.id.buttonRes);
-        res_spill.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                resultTextView.setText("\u2713  " +String.valueOf(antallRiktig));
-                tekst_res.setText("\u274C " +String.valueOf(antallFeil));
-            }
 
-        });
 
     }
 }

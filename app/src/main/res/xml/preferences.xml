@@ -2,15 +2,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
+        android:title="@string/prefer_tittle">
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
         android:title="@string/prefer_language">
 
         <CheckBoxPreference
-            android:id="@+id/nor_lang"
+            android:key="@+id/nor_lang"
             android:title="@string/nor_lang"
             android:defaultValue="true" />
 
         <CheckBoxPreference
-            android:id="@+id/ger_lang"
+            android:key="@+id/ger_lang"
             android:title="@string/ger_lang"
             android:defaultValue="false" />
 

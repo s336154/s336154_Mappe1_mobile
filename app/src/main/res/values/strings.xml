@@ -21,6 +21,7 @@
     <string name="prefer_spill10"> 10 Regnestykker </string>
     <string name="prefer_spill15"> 15 Regnestykker </string>
     <string name="prefer_antall"> Antall Regnestykker</string>
+    <string name="prefer_tittle"> Innstillinger </string>
     <string name="omspill_tekst"> Om Spill </string>
     <string name="omspill_knapp1"> Tilbake </string>
     <string name="omspill_beskriv"> Spillet er egnet til

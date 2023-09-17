@@ -18,26 +18,6 @@ public class SettingsActivity extends AppCompatActivity {
                 .replace(android.R.id.content, new SettingsFragment())
                 .commit();
 
-        Button KnappNO = (Button) findViewById(R.id.nor_lang);
-        Button KnappDE = (Button) findViewById(R.id.ger_lang);
-
-        KnappNO.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                LocaleListCompat appLocale = LocaleListCompat.forLanguageTags("no-NO");
-                AppCompatDelegate.setApplicationLocales(appLocale);
-            }
-        });
-
-
-        KnappDE.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                LocaleListCompat appLocale = LocaleListCompat.forLanguageTags("de-DE");
-                AppCompatDelegate.setApplicationLocales(appLocale);
-            }
-        });
-
      }
 
 }
