@@ -254,7 +254,9 @@ public class SpillAktivitet  extends AppCompatActivity implements
                 if (antallFeil != 0 || antallRiktig != 0) {
                     visDialog(view);
                 }
+                else{
                 finish();
+            }
             }
         });
 
