@@ -77,7 +77,6 @@ public class SpillAktivitet  extends AppCompatActivity implements
         Log.d("Logged", String.valueOf(prefer_10));
 
 
-
         Button butt0 = (Button) findViewById(R.id.button0);
         Button butt1 = (Button) findViewById(R.id.button1);
         Button butt2 = (Button) findViewById(R.id.button2);
