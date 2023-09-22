@@ -217,23 +217,53 @@ public class SpillAktivitet  extends AppCompatActivity implements
                 @Override
                 public void onClick(View view) {
 
+                    if (Str_prefer5 == "true") {
+                        if (x == 5) {
+                            finish();
+                        } }
+
+
+                    if (Str_prefer15 == "true") {
+                        if (x == 15) {
+                            finish();
+                        } }
+
+
+                    if (Str_prefer10 == "true") {
+                        if (x == 10) {
+                            finish();
+                        } }
 
                     innverdi = tekst_res.getText().toString().split("=");
-                    String Str_innverdi = innverdi[1].trim();
-                    check = mListValues[randomIndex2].split("=");
-                    String Str_check = check[1].trim();
-                    resultTextView.setText(mListValues[randomIndex2]);
-                    Log.d("Check", Str_check);
-                    Log.d("Innverdi", Str_innverdi);
 
-                    if (Str_check.equals(Str_innverdi)) {
-                        tekst_res.setText("\u2713");
-                        antallRiktig++;
-                        Log.d("Indekser Riktig", String.valueOf(antallRiktig));
-                    } else {
-                        tekst_res.setText("\u274C");
-                        antallFeil++;
-                        Log.d("Indekser feil", String.valueOf(antallFeil));
+                    if (innverdi.length == 1) {
+                        randomIndex2 = (int) (Math.random() * mListValues.length);
+                        while (randomIndex == randomIndex2 || containsValue(indekser, randomIndex2)) {
+                            randomIndex2 = (int) (Math.random() * mListValues.length);
+                        }
+                        tekst_res.setText(mListRegn[randomIndex2]);
+                        indekser[x++] = randomIndex2;
+                        Log.d("Indekser x", String.valueOf(x));
+                    }
+
+                    else {
+                        String Str_innverdi = innverdi[1].trim();
+                        check = mListValues[randomIndex2].split("=");
+                        String Str_check = check[1].trim();
+                        resultTextView.setText(mListValues[randomIndex2]);
+                        Log.d("Check", Str_check);
+                        Log.d("Innverdi", Str_innverdi);
+
+
+                        if (Str_check.equals(Str_innverdi)) {
+                            tekst_res.setText("\u2713");
+                            antallRiktig++;
+                            Log.d("Indekser Riktig", String.valueOf(antallRiktig));
+                        } else {
+                            tekst_res.setText("\u274C");
+                            antallFeil++;
+                            Log.d("Indekser feil", String.valueOf(antallFeil));
+                        }
                     }
                 }
             });
