@@ -10,12 +10,12 @@
         android:title="@string/prefer_language">
 
         <CheckBoxPreference
-            android:key="@+id/nor_lang"
+            android:key="nor_lang"
             android:title="@string/nor_lang"
             android:defaultValue="true" />
 
         <CheckBoxPreference
-            android:key="@+id/ger_lang"
+            android:key="ger_lang"
             android:title="@string/ger_lang"
             android:defaultValue="false" />
 
@@ -25,17 +25,17 @@
         android:title="@string/prefer_antall">
 
         <CheckBoxPreference
-            android:id="@+id/prefer_spill5"
+            android:key="prefer_spill5"
             android:title="@string/prefer_spill5"
             android:defaultValue="true" />
 
         <CheckBoxPreference
-            android:id="@+id/prefer_spill10"
+            android:key="prefer_spill10"
             android:title="@string/prefer_spill10"
             android:defaultValue="false" />
 
         <CheckBoxPreference
-            android:id="@+id/prefer_spill15"
+            android:key="prefer_spill15"
             android:title="@string/prefer_spill15"
             android:defaultValue="false" />
 

@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
+import java.util.concurrent.TimeUnit;
+
 public class SpillAktivitet  extends AppCompatActivity implements
         MinDialog.MittInterface {
 
@@ -55,6 +57,22 @@ public class SpillAktivitet  extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.spill_aktivitet);
+
+
+/*
+        if (x > 5){
+            resultTextView.setText("\u2713  " +String.valueOf(antallRiktig));
+            tekst_res.setText("\u274C " +String.valueOf(antallFeil));
+            try {
+                TimeUnit.SECONDS.sleep(5);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            finish();
+
+        }
+
+ */
 
 
         Button butt0 = (Button) findViewById(R.id.button0);
@@ -138,94 +156,96 @@ public class SpillAktivitet  extends AppCompatActivity implements
         });
 
 
-        Log.d("Indekser x", String.valueOf(x));
-        mListValues = getResources().getStringArray(R.array.listValues);
-        resultTextView = findViewById(R.id.tekst_regnstykke);
-        randomIndex = (int) (Math.random() * mListValues.length);
-        resultTextView.setText(mListValues[randomIndex]);
 
 
-        tekst_res = (EditText) findViewById(R.id.res_textView);
-        mListRegn = getResources().getStringArray(R.array.listRegn);
-        randomIndex2 = (int) (Math.random() * mListValues.length);
+            Log.d("Indekser x", String.valueOf(x));
+            mListValues = getResources().getStringArray(R.array.listValues);
+            resultTextView = findViewById(R.id.tekst_regnstykke);
+            randomIndex = (int) (Math.random() * mListValues.length);
+            resultTextView.setText(mListValues[randomIndex]);
 
 
-        if (randomIndex2 != randomIndex) {
-            tekst_res.setText(mListRegn[randomIndex2]);
-        } else {
+            tekst_res = (EditText) findViewById(R.id.res_textView);
+            mListRegn = getResources().getStringArray(R.array.listRegn);
             randomIndex2 = (int) (Math.random() * mListValues.length);
-            tekst_res.setText(mListRegn[randomIndex2]);
-        }
 
 
-        indekser[x++] = randomIndex2;
-        Log.d("Indekser array", String.valueOf(indekser.length));
-        Log.d("Indekser x", String.valueOf(x));
-
-
-        buttonHjelp = (Button) findViewById(R.id.hjelpSpill);
-        buttonHjelp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                resultTextView.setText(mListValues[randomIndex2]);
-
+            if (randomIndex2 != randomIndex) {
+                tekst_res.setText(mListRegn[randomIndex2]);
+            } else {
+                randomIndex2 = (int) (Math.random() * mListValues.length);
+                tekst_res.setText(mListRegn[randomIndex2]);
             }
-        });
 
 
-        buttonSjekk = (Button) findViewById(R.id.buttonCheck);
-        buttonSjekk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+            indekser[x++] = randomIndex2;
+            Log.d("Indekser array", String.valueOf(indekser.length));
+            Log.d("Indekser x", String.valueOf(x));
 
-                innverdi = tekst_res.getText().toString().split("=");
-                String Str_innverdi = innverdi[1].trim();
-                check = mListValues[randomIndex2].split("=");
-                String Str_check = check[1].trim();
-                resultTextView.setText(mListValues[randomIndex2]);
-                Log.d("Check", Str_check);
-                Log.d("Innverdi", Str_innverdi);
 
-                if (Str_check.equals(Str_innverdi)) {
-                    tekst_res.setText("\u2713");
-                    antallRiktig++;
-                    Log.d("Indekser Riktig", String.valueOf(antallRiktig));
-                } else {
-                    tekst_res.setText("\u274C");
-                    antallFeil++;
-                    Log.d("Indekser feil", String.valueOf(antallFeil));
+            buttonHjelp = (Button) findViewById(R.id.hjelpSpill);
+            buttonHjelp.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    resultTextView.setText(mListValues[randomIndex2]);
+
                 }
-            }
-        });
+            });
 
 
-        buttonOK = (Button) findViewById(R.id.buttonOK);
-        buttonOK.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+            buttonSjekk = (Button) findViewById(R.id.buttonCheck);
+            buttonSjekk.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
-                innverdi = tekst_res.getText().toString().split("=");
-                while (innverdi.length == 2) {
+                    innverdi = tekst_res.getText().toString().split("=");
                     String Str_innverdi = innverdi[1].trim();
+                    check = mListValues[randomIndex2].split("=");
+                    String Str_check = check[1].trim();
+                    resultTextView.setText(mListValues[randomIndex2]);
+                    Log.d("Check", Str_check);
                     Log.d("Innverdi", Str_innverdi);
 
-                    if (Str_innverdi != " ") {
-                        check = mListValues[randomIndex2].split("=");
-                        String Str_check = check[1].trim();
-                        Log.d("Check", Str_check);
-                        Log.d("Innverdi", Str_innverdi);
-
-                        if (Str_check.equals(Str_innverdi)) {
-                            antallRiktig++;
-                            Log.d("Indekser Riktig", String.valueOf(antallRiktig));
-                            innverdi = new String[1];
-                        } else {
-                            antallFeil++;
-                            Log.d("Indekser feil", String.valueOf(antallFeil));
-                            innverdi = new String[1];
-                        }
+                    if (Str_check.equals(Str_innverdi)) {
+                        tekst_res.setText("\u2713");
+                        antallRiktig++;
+                        Log.d("Indekser Riktig", String.valueOf(antallRiktig));
+                    } else {
+                        tekst_res.setText("\u274C");
+                        antallFeil++;
+                        Log.d("Indekser feil", String.valueOf(antallFeil));
                     }
                 }
+            });
+
+
+            buttonOK = (Button) findViewById(R.id.buttonOK);
+            buttonOK.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    innverdi = tekst_res.getText().toString().split("=");
+                    while (innverdi.length == 2) {
+                        String Str_innverdi = innverdi[1].trim();
+                        Log.d("Innverdi", Str_innverdi);
+
+                        if (Str_innverdi != " ") {
+                            check = mListValues[randomIndex2].split("=");
+                            String Str_check = check[1].trim();
+                            Log.d("Check", Str_check);
+                            Log.d("Innverdi", Str_innverdi);
+
+                            if (Str_check.equals(Str_innverdi)) {
+                                antallRiktig++;
+                                Log.d("Indekser Riktig", String.valueOf(antallRiktig));
+                                innverdi = new String[1];
+                            } else {
+                                antallFeil++;
+                                Log.d("Indekser feil", String.valueOf(antallFeil));
+                                innverdi = new String[1];
+                            }
+                        }
+                    }
                     randomIndex2 = (int) (Math.random() * mListValues.length);
                     while (randomIndex == randomIndex2 || containsValue(indekser, randomIndex2)) {
                         randomIndex2 = (int) (Math.random() * mListValues.length);
@@ -233,34 +253,31 @@ public class SpillAktivitet  extends AppCompatActivity implements
                     tekst_res.setText(mListRegn[randomIndex2]);
                     indekser[x++] = randomIndex2;
                     Log.d("Indekser x", String.valueOf(x));
-            }
-        });
-
-
-        Button res_spill = findViewById(R.id.buttonRes);
-        res_spill.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                resultTextView.setText("\u2713  " +String.valueOf(antallRiktig));
-                tekst_res.setText("\u274C " +String.valueOf(antallFeil));
-            }
-        });
-
-
-        Button avsluttSpill = findViewById(R.id.avsluttSpill);
-        avsluttSpill.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (antallFeil != 0 || antallRiktig != 0) {
-                    visDialog(view);
                 }
-                else{
-                finish();
-            }
-            }
-        });
+            });
 
 
+            Button res_spill = findViewById(R.id.buttonRes);
+            res_spill.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    resultTextView.setText("\u2713  " + String.valueOf(antallRiktig));
+                    tekst_res.setText("\u274C " + String.valueOf(antallFeil));
+                }
+            });
+
+
+            Button avsluttSpill = findViewById(R.id.avsluttSpill);
+            avsluttSpill.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (antallFeil != 0 || antallRiktig != 0) {
+                        visDialog(view);
+                    } else {
+                        finish();
+                    }
+                }
+            });
 
     }
 }

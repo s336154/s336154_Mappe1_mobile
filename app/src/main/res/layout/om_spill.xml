@@ -33,7 +33,7 @@
                 android:layout_gravity="center"
                 android:text="@string/omspill_beskriv"
                 android:textColor="#8B0000"
-                android:textSize="32sp"
+                android:textSize="26sp"
                 android:textStyle="bold" />
 
 
