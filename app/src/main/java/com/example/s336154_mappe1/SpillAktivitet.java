@@ -217,22 +217,6 @@ public class SpillAktivitet  extends AppCompatActivity implements
                 @Override
                 public void onClick(View view) {
 
-                    if (Str_prefer5 == "true") {
-                        if (x == 5) {
-                            finish();
-                        } }
-
-
-                    if (Str_prefer15 == "true") {
-                        if (x == 15) {
-                            finish();
-                        } }
-
-
-                    if (Str_prefer10 == "true") {
-                        if (x == 10) {
-                            finish();
-                        } }
 
                     innverdi = tekst_res.getText().toString().split("=");
                     String Str_innverdi = innverdi[1].trim();
@@ -318,22 +302,6 @@ public class SpillAktivitet  extends AppCompatActivity implements
                 @Override
                 public void onClick(View view) {
 
-                    if (Str_prefer5 == "true") {
-                        if (x == 5) {
-                            finish();
-                        } }
-
-
-                    if (Str_prefer15 == "true") {
-                        if (x == 15) {
-                            finish();
-                        } }
-
-
-                    if (Str_prefer10 == "true") {
-                        if (x == 10) {
-                            finish();
-                        } }
 
                     resultTextView.setText("\u2713  " + String.valueOf(antallRiktig));
                     tekst_res.setText("\u274C " + String.valueOf(antallFeil));
