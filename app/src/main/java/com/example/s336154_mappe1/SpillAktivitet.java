@@ -1,5 +1,8 @@
 package com.example.s336154_mappe1;
 
+import static androidx.preference.PreferenceManager.getDefaultSharedPreferences;
+
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,7 +12,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
-import java.util.concurrent.TimeUnit;
 
 public class SpillAktivitet  extends AppCompatActivity implements
         MinDialog.MittInterface {
@@ -59,20 +61,21 @@ public class SpillAktivitet  extends AppCompatActivity implements
         setContentView(R.layout.spill_aktivitet);
 
 
-/*
-        if (x > 5){
-            resultTextView.setText("\u2713  " +String.valueOf(antallRiktig));
-            tekst_res.setText("\u274C " +String.valueOf(antallFeil));
-            try {
-                TimeUnit.SECONDS.sleep(5);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-            finish();
+        SharedPreferences sharedPref = getDefaultSharedPreferences(this);
+        boolean prefer_5 = sharedPref.getBoolean("prefer_spill5", false);
+        String Str_prefer5 = String.valueOf(prefer_5);
+        Log.d("Logged", String.valueOf(prefer_5));
 
-        }
 
- */
+        boolean prefer_15 = sharedPref.getBoolean("prefer_spill15", true);
+        String Str_prefer15 = String.valueOf(prefer_15);
+        Log.d("Logged", String.valueOf(prefer_15));
+
+
+        boolean prefer_10 = sharedPref.getBoolean("prefer_spill10", true);
+        String Str_prefer10 = String.valueOf(prefer_10);
+        Log.d("Logged", String.valueOf(prefer_10));
+
 
 
         Button butt0 = (Button) findViewById(R.id.button0);
@@ -187,8 +190,25 @@ public class SpillAktivitet  extends AppCompatActivity implements
             buttonHjelp.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    resultTextView.setText(mListValues[randomIndex2]);
 
+                    if (Str_prefer5 == "true") {
+                        if (x == 5) {
+                            finish();
+                        } }
+
+
+                    if (Str_prefer15 == "true") {
+                        if (x == 15) {
+                            finish();
+                        } }
+
+
+                    if (Str_prefer10 == "true") {
+                        if (x == 10) {
+                            finish();
+                        } }
+
+                    resultTextView.setText(mListValues[randomIndex2]);
                 }
             });
 
@@ -197,6 +217,23 @@ public class SpillAktivitet  extends AppCompatActivity implements
             buttonSjekk.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
+                    if (Str_prefer5 == "true") {
+                        if (x == 5) {
+                            finish();
+                        } }
+
+
+                    if (Str_prefer15 == "true") {
+                        if (x == 15) {
+                            finish();
+                        } }
+
+
+                    if (Str_prefer10 == "true") {
+                        if (x == 10) {
+                            finish();
+                        } }
 
                     innverdi = tekst_res.getText().toString().split("=");
                     String Str_innverdi = innverdi[1].trim();
@@ -223,6 +260,24 @@ public class SpillAktivitet  extends AppCompatActivity implements
             buttonOK.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
+                    if (Str_prefer5 == "true") {
+                        if (x == 5) {
+                            finish();
+                        } }
+
+
+                    if (Str_prefer15 == "true") {
+                        if (x == 15) {
+                            finish();
+                        } }
+
+
+                    if (Str_prefer10 == "true") {
+                        if (x == 10) {
+                            finish();
+                        } }
+
 
                     innverdi = tekst_res.getText().toString().split("=");
                     while (innverdi.length == 2) {
@@ -259,8 +314,28 @@ public class SpillAktivitet  extends AppCompatActivity implements
 
             Button res_spill = findViewById(R.id.buttonRes);
             res_spill.setOnClickListener(new View.OnClickListener() {
+
+
                 @Override
                 public void onClick(View view) {
+
+                    if (Str_prefer5 == "true") {
+                        if (x == 5) {
+                            finish();
+                        } }
+
+
+                    if (Str_prefer15 == "true") {
+                        if (x == 15) {
+                            finish();
+                        } }
+
+
+                    if (Str_prefer10 == "true") {
+                        if (x == 10) {
+                            finish();
+                        } }
+
                     resultTextView.setText("\u2713  " + String.valueOf(antallRiktig));
                     tekst_res.setText("\u274C " + String.valueOf(antallFeil));
                 }
@@ -278,6 +353,8 @@ public class SpillAktivitet  extends AppCompatActivity implements
                     }
                 }
             });
+
+
 
     }
 }

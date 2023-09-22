@@ -27,7 +27,7 @@
         <CheckBoxPreference
             android:key="prefer_spill5"
             android:title="@string/prefer_spill5"
-            android:defaultValue="true" />
+            android:defaultValue="false" />
 
         <CheckBoxPreference
             android:key="prefer_spill10"
@@ -37,7 +37,7 @@
         <CheckBoxPreference
             android:key="prefer_spill15"
             android:title="@string/prefer_spill15"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
 
     </PreferenceCategory>
