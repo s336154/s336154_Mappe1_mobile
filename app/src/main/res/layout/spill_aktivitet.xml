@@ -41,7 +41,7 @@
             android:layout_column="0"
             android:background="#F0F8FF"
             android:gravity="center"
-            android:textColor="#191970"
+            android:textColor="#006400"
             android:textSize="45sp"
             android:textStyle="bold"
             android:inputType="number"/>
